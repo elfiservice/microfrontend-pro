@@ -5,6 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'packages/container/**'
+  workflow_dispatch:
 
 defaults:
   run:
