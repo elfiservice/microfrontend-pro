@@ -18,8 +18,10 @@ export default () => {
   };
 
   useEffect(() => {
-    mount(ref.current, config);
-  });
+    const { onParentNavigate } = mount(ref.current, config);
+
+    history.listen(onParentNavigate);
+  }, []);
 
   return <div ref={ref} />;
 };

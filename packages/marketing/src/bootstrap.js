@@ -10,11 +10,24 @@ const mount = (el, config) => {
   const { onNavigate } = config;
   const history = createMemoryHistory();
 
+  const noticeContainerApp = {
+    onParentNavigate(location) {
+      const { pathname: nextPathname } = location;
+      const { pathname } = history.location;
+      
+      if (pathname !== nextPathname) {
+        history.push(nextPathname);
+      }
+    }
+  };
+
   if (onNavigate) {
     history.listen(onNavigate);
   }
 
   ReactDOM.render(<App history={history} />, el);
+
+  return noticeContainerApp;
 };
 
 // If we are in development and in isolation,
