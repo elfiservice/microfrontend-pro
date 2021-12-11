@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// creado esse history para que cada Microfront fique independente na navegação
+// https://www.udemy.com/course/microfrontend-course/learn/lecture/23241682#notes
+import { createMemoryHistory } from 'history';
 import App from './App';
 
 // Mount function to start up the app
 const mount = (el) => {
-  ReactDOM.render(<App />, el);
+  const history = createMemoryHistory();
+  ReactDOM.render(<App history={history} />, el);
 };
 
 // If we are in development and in isolation,
