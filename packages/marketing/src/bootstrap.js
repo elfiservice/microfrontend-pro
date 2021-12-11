@@ -6,8 +6,12 @@ import { createMemoryHistory } from 'history';
 import App from './App';
 
 // Mount function to start up the app
-const mount = (el) => {
+const mount = (el, config) => {
+  const { onNavigate } = config;
   const history = createMemoryHistory();
+
+  history.listen(onNavigate);
+
   ReactDOM.render(<App history={history} />, el);
 };
 
