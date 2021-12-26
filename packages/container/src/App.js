@@ -5,6 +5,7 @@ import {
   createGenerateClassName,
 } from '@material-ui/core/styles';
 import Header from './components/Header';
+import Progress from './components/Progress'
 
 //parei aqui https://www.udemy.com/course/microfrontend-course/learn/lecture/23275292
 //https://github.com/elfiservice/microfrontend-pro/pull/2
@@ -22,7 +23,7 @@ export default () => {
       <StylesProvider generateClassName={generateClassName}>
         <div>
             <Header />
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Progress />}>
               <Switch>
                 <Route path="/auth" component={AuthLazy} />
                 <Route path="/" component={MarketingLazy} />
