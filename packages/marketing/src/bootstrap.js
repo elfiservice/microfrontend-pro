@@ -7,8 +7,10 @@ import App from './App';
 
 // Mount function to start up the app
 const mount = (el, config) => {
-  const { onNavigate, defaultHistory } = config;
-  const history = defaultHistory || createMemoryHistory();
+  const { onNavigate, defaultHistory, initialPath } = config;
+  const history = defaultHistory || createMemoryHistory({
+    initialEntries: [initialPath]
+  });
 
   const noticeContainerApp = {
     onParentNavigate(location) {

@@ -7,6 +7,7 @@ export default () => {
   const history = useHistory();
 
   const config = {
+    initialPath: history.location.pathname,
     onNavigate: (location) => {
       const { pathname: nextPathname } = location;
       const { pathname } = history.location;
