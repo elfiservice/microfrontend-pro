@@ -8,7 +8,8 @@ import MarketingApp from './components/MarketingApp';
 import AuthApp from './components/AuthApp';
 import Header from './components/Header';
 
-//parei aqui https://www.udemy.com/course/microfrontend-course/learn/lecture/23275268#notes
+//parei aqui https://www.udemy.com/course/microfrontend-course/learn/lecture/23275292
+//https://github.com/elfiservice/microfrontend-pro/pull/2
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'containerApp',
@@ -24,7 +25,6 @@ export default () => {
               <Route path="/auth" component={AuthApp} />
               <Route path="/" component={MarketingApp} />
             </Switch>
-            <MarketingApp />
         </div>
       </StylesProvider>
     </BrowserRouter>
