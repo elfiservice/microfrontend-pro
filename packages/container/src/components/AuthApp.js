@@ -1,4 +1,4 @@
-import { mount } from 'marketingRemote/MarketingApp';
+import { mount } from 'authRemote/AuthApp';
 import React, { useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
