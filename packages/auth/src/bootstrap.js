@@ -7,7 +7,7 @@ import App from './App';
 
 // Mount function to start up the app
 const mount = (el, config) => {
-  const { onNavigate, defaultHistory, initialPath } = config;
+  const { onNavigate, onSignIn, defaultHistory, initialPath } = config;
   const history = defaultHistory || createMemoryHistory({
     initialEntries: [initialPath]
   });
@@ -27,7 +27,7 @@ const mount = (el, config) => {
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, el);
+  ReactDOM.render(<App onSignIn={onSignIn} history={history} />, el);
 
   return noticeContainerApp;
 };
