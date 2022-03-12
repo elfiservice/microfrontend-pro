@@ -8,5 +8,17 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+const mount = () => {
+  platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch(err => console.error(err));
+};
+
+// If we are in development and in isolation,
+// call mount immediately
+const isStandAlone = document.querySelector("app-root");
+if (isStandAlone) {
+  mount();
+}
+
+export { mount };
